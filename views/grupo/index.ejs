@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Listagem dos Grupos</title>
+</head>
+<body>
+    <h1>Listagem de Grupos</h1>
+    <p>
+        <a href="/grupo/add">Adicionar</a>
+    </p>
+    <form method="post">
+        <input type="text" name="pesquisar">
+        <input type="submit" value="Pesquisar">
+    </form>
+    <table>
+        <tr>
+            <th>Id</th>
+            <th>Nome</th>
+            <th>Ano do Debut</th>
+            <th>Numero de Membros</th>
+            <th>Geracao</th>
+            <th>Ultimo Comeback</th>
+            <th>Categoria</th>
+            <th>Musica de Debut</th>
+            <th>Editar</th>
+            <th>Excluir</th>
+        </tr>
+        <% Grupos.forEach((grupo)=>{ %>
+        <tr>
+            <td><%=grupo.id%></td>
+            <td><%=grupo.nome%></td>
+            <td><%=grupo.debutano%></td>
+            <td><%=grupo.nummembros%></td>
+            <td><%=grupo.geracao%></td>
+            <td><%=grupo.ultimocb%></td>
+            <td><%=grupo.categoria%></td>
+            <td><%=grupo.musicadebut%></td>
+            <td>
+                <a href="/grupo/edt/<%=grupo.id%>">Editar</a>
+            </td>
+            <td>
+                <a href="/grupo/del/<%=grupo.id%>">Deletar</a>
+            </td>
+        </tr>
+        <% }) %>
+    </table>
+</body>
+</html>

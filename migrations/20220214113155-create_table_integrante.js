@@ -2,7 +2,7 @@
 
 module.exports = {
   async up(queryInterface, Sequelize) {
-    await queryInterface.createTable("usuarios", {
+    await queryInterface.createTable("integrantes", {
       id: {
         type: Sequelize.BIGINT,
         primaryKey: true,
@@ -13,15 +13,19 @@ module.exports = {
         type: Sequelize.STRING,
         allowNull: false,
       },
-      email: {
+      dob: {
+        type: Sequelize.DATE,
+        allowNull: false,
+      },
+      numgrupo: {
+        type: Sequelize.SMALLINT,
+        allowNull: false,
+      },
+      stagename: {
         type: Sequelize.STRING,
         allowNull: false,
       },
-      senha: {
-        type: Sequelize.STRING,
-        allowNull: false,
-      },
-      foto: {
+      genero: {
         type: Sequelize.STRING,
         allowNull: false,
       },
@@ -29,6 +33,6 @@ module.exports = {
   },
 
   async down(queryInterface, Sequelize) {
-    await queryInterface.dropTable("usuarios");
+    await queryInterface.dropTable("integrantes");
   },
 };

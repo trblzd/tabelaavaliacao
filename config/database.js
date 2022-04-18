@@ -4,8 +4,12 @@ const dbconfig = require("./dbconfig");
 
 const conexao = new sequelize(dbconfig);
 
-const Usuario = require("../models/Usuario");
+const Integrante = require("../models/integrante");
 
-Usuario.init(conexao);
+const Grupo = require("../models/grupo")
+
+Integrante.init(conexao);
+Grupo.init(conexao);
 
 module.exports = conexao;
+

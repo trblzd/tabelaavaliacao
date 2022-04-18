@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editando Grupos</title>
+</head>
+<body>
+    <form method="post">
+        Nome: <input value="<%=grupo.nome%>" type="text" name="nome" placeholder="Digite o nome do grupo"><br>
+        Ano do Debut: <input value="<%=grupo.debutano%>" type="number" name="debutano" placeholder="Digite o ano de debut"><br>
+        Numero de Membros: <input value="<%=grupo.nummembros%>" type="number" name="nummembros" placeholder="Digite o numero de membros"><br>
+        Musica de Debut: <input value="<%=grupo.musicadebut%>" type="text" name="musicadebut" placeholder="Digite o nome da musica de debut"><br>
+        Geracao: <input value="<%=grupo.geracao%>" type="number" name="geracao" placeholder="Digite o numero da geracao"><br>
+        Ultimo Comeback: <input value="<%=grupo.ultimocb%>" type="text" name="ultimocb" placeholder="Digite o nome do ultimo comeback"><br>
+        Categoria: <input value="<%=grupo.categoria%>" type="text" name="categoria" placeholder="Digite a categoria"><br>
+        <input type="submit" value="Enviar">
+    </form>
+</body>
+</html>

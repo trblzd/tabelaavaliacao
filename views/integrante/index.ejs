@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Listagem dos Integrantes</title>
+</head>
+<body>
+    <h1>Listagem de integrantes</h1>
+    <p>
+        <a href="/integrante/add">Adicionar</a>
+    </p>
+    <form method="post">
+        <input type="text" name="pesquisar">
+        <input type="submit" value="Pesquisar">
+    </form>
+    <table>
+        <tr>
+            <th>Id</th>
+            <th>Nome</th>
+            <th>Aniversário</th>
+            <th>Número de Grupos</th>
+            <th>Stage Name</th>
+            <th>Gênero</th>
+            <th>Editar</th>
+            <th>Excluir</th>
+        </tr>
+        <% Integrantes.forEach((integrante)=>{ %>
+        <tr>
+            <td><%=integrante.id%></td>
+            <td><%=integrante.nome%></td>
+            <td><%=integrante.dob%></td>
+            <td><%=integrante.numgrupo%></td>
+            <td><%=integrante.stagename%></td>
+            <td><%=integrante.genero%></td>
+            <td>
+                <a href="/integrante/edt/<%=integrante.id%>">Editar</a>
+            </td>
+            <td>
+                <a href="/integrante/del/<%=integrante.id%>">Deletar</a>
+            </td>
+        </tr>
+        <% }) %>
+    </table>
+</body>
+</html>
